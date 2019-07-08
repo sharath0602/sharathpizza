@@ -1,0 +1,99 @@
+
+<body>
+<!-- <a routerLink="/cart">Add product into your cart </a> -->
+
+<!-- <table >
+   <div class="row" *ngFor="let product of product ">
+    <div class="col-sm-2"> <a routerLink="/prod/{{product.prodId}}">{{product.prodId}} </a></div>
+    <div class="col-sm-2"> <a routerLink="/prod/{{product.prodId}}">{{product.prodName}}</a></div>
+    <div class="col-sm-2"> <a routerLink="/prod/{{product.prodId}}">{{product.pizza}}</a></div>
+    <div class="col-sm-2"> <a routerLink="/prod/{{product.prodId}}">{{product.price}}</a></div>
+    <div class="col-sm-2"> <a routerLink="/prod/{{product.prodId}}">{{product.base}}</a></div>
+    <div class="col-sm-2"> <a routerLink="/prod/{{product.prodId}}">{{product.type}}</a></div>
+
+
+    <div class="col-sm-2"> 
+      <a routerLink="/prod/edit/{{product.prodId}}">Edit</a>
+      <br/><a routerLink="/delete">Delete</a>
+   </div>
+   </div>  
+ </table> -->
+
+
+
+
+
+ <div class='card'>
+  <!-- <div class='card-header'>
+  Pizza Shop
+  </div> -->
+  <div class='card-body'>
+    <div class='row'>
+      <div class='col-md-2'>Filter by:</div>
+      <div class='col-md-4'>
+        <input type='text'
+               [(ngModel)]='listFilter' />
+      </div>
+    </div>
+    <div class='row'
+         *ngIf='listFilter'>
+      <div class='col-md-6'>
+        <h4>Filtered by: {{listFilter}}</h4> filter
+      </div>
+    </div>
+    <div class='table-responsive'>
+      <table class='table'>
+             <!-- *ngIf='products && products.length'> -->
+        <thead>
+          <tr>
+           
+            <th>Pizza Id </th>
+            <th>Pizza Name </th>
+            <th>Pizza Type</th>
+            <th>Price</th>
+            <th>Base</th>
+            <th>Type</th>
+            <th>Add to cart</th>
+          </tr>
+        </thead>
+        <tbody>
+            <!-- <tr *ngFor="let product of product " (click)="onSelection(product)"> -->
+            <tr *ngFor="let product of filteredProducts " (click)="onSelection(product)">
+             
+              <td>{{product.prodId}}</td>
+
+            <td>
+              <!-- <a [routerLink]="['/products', product.productId]"> -->
+                {{ product.prodName }}
+              <!-- </a> -->
+            </td>
+            <td>{{product.pizza}}</td>
+            <td>{{ product.price | currency:'INR':'symbol':'1.2-2' }}</td>
+            <td>{{product.base}}</td>
+            <td>{{product.type}}</td>
+            <!-- <td>
+              <pm-star [rating]='product.starRating'
+                       (ratingClicked)='onRatingClicked($event)'>
+              </pm-star>
+            </td> -->
+            <td>
+                <a routerLink="/prod/edit/{{product.prodId}}">Edit</a>&nbsp;&nbsp;
+             
+                <a routerLink="/delete/{{product.prodId}}">Delete</a>&nbsp;&nbsp;
+               
+                <button (click)="addToCart(product)">ADD</button>&nbsp;&nbsp;
+            </td>
+          </tr>
+        </tbody>
+       
+      </table>
+    </div>
+  </div>
+</div>
+<div *ngIf='errorMessage'
+     class='alert alert-danger'>
+  Error: {{ errorMessage }}
+</div>
+
+
+</body>

@@ -1,0 +1,28 @@
+<body>
+
+
+<!-- //<a routerLink="/products">Product</a> -->
+  <div style="text-align: center">
+<h1 style="color:blue"> Welcome to New York Pizza</h1>
+<marquee><img src="assets\images\pizza2.jpg"></marquee>
+</div>
+<nav class="navbar navbar-dark bg-dark mb-5">
+
+      <a class="navbar-brand"  >  </a>
+      <div class="navbar-expand mr-auto">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="#">Home</a>
+            <a class="nav-item nav-link active" routerLink="/products">Menu Card</a>
+     
+            <a class="nav-item nav-link" routerLink="/cart">Cart</a>
+            
+         </div> 
+       </div>
+</nav>
+     
+<!-- <div style="text-align: center">
+    <h1 style="color:rgb(250, 253, 253);">Welcome To My shop</h1>
+    </div> -->
+<!-- <app-product-list></app-product-list> -->
+<router-outlet></router-outlet>
+</body>

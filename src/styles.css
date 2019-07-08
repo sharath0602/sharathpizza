@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+body, html {
+     background-image: url("assets\images\newyork.jpg");
+     height: 100%;
+     background-repeat: no-repeat;
+     background-size: 100%;
+     background-position: center;
+  }
+  /* .bg {
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  } */
+ 
+  .homeicon{
+    align-self: center;
+  }

@@ -1,0 +1,10 @@
+<div class="container">  
+              
+                <h3><p class="p1">Cart Details :</p></h3>
+                        <div class="row" *ngFor="let pizza of pizzas">
+                            <div class="col-md-3">{{pizza.prodId}}</div>   
+                            <div class="col-md-3">{{pizza.price}}</div>                           
+                            <a routerLink="/cart/delete">Delete</a>
+                        </div> 
+</div>
+                

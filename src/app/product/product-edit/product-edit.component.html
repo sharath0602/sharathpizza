@@ -1,0 +1,20 @@
+
+<div class="edit">
+  <form >
+    <label for="prodId">Product Id         </label>
+    <input type="text" id="prodId" name="prodId" placeholder="Product Id" class="col-md-4" [(ngModel)]="product.prodId">
+    <br/>
+    <label for="prodName">Product Name      </label>
+    <input type="text" id="prodName" name="prodName" placeholder="Product name.."  class="col-md-4" [(ngModel)]="product.prodName">
+    <br/>
+    <label for="price">Price</label>
+    <input type="text" id="price" name="price" placeholder="product Price " class="col-md-4" [(ngModel)]="product.price">
+    <br/>
+  <!-- <button>Update</button> -->
+  <button (click)="updateProduct(product.prodId,product.price)">Edit</button>
+<!--     
+    <input type="button" value="Add">&nbsp;&nbsp;
+    <input type="button" value="Edit"> -->
+  </form>
+</div>
+
